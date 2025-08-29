@@ -5,3 +5,7 @@ node_modules
 dist
 *.tsbuildinfo
 *.db
+
+#files from build
+packages/validations/**/*.js
+packages/validations/**/*.d.ts

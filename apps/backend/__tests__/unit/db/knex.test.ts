@@ -11,8 +11,7 @@ jest.mock('@/db/knexconfig', () => ({
 
 async function loadKnexModule() {
   jest.resetModules();
-  // @ts-ignore
-  return import('@/db/knex');
+  return require('@/db/knex');
 }
 
 describe('db/knex', () => {
