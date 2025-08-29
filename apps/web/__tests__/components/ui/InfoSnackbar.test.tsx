@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import { InfoSnackbar } from '@/components/ui/InfoSnackbar';
@@ -24,8 +24,10 @@ describe('InfoSnackbar', () => {
     vi.useFakeTimers();
     const onClose = vi.fn();
     render(<InfoSnackbar message="Auto-hide" onClose={onClose} />);
-    vi.advanceTimersByTime(1000);
-    await Promise.resolve();
+    await act(async () => {
+      vi.advanceTimersByTime(1000);
+      await Promise.resolve();
+    });
 
     expect(onClose).toHaveBeenCalled();
 

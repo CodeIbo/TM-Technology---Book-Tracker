@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useContext } from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
@@ -42,7 +42,10 @@ describe('SnackbarProvider', () => {
       onClose: expect.any(Function),
     });
 
-    lastProps.onClose();
+    await act(async () => {
+      lastProps.onClose();
+      await Promise.resolve();
+    });
 
     await waitFor(() => {
       expect(lastProps.message).toBeNull();
