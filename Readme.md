@@ -1,9 +1,9 @@
-# 📚 Book Tracker Monorepo
+# Book Tracker Monorepo
 
 This is a monorepo for **Book Tracker**, containing the backend (Express + Knex + SQLite + Typescript) and the frontend (React + Vite + Typescript).
 It uses [Turborepo](https://turbo.build/) for task running and workspaces for package management.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Install dependencies
 
@@ -53,7 +53,7 @@ cd apps/web
 npm run dev
 ```
 
-## 🏗️ Build
+## Build
 
 Build all packages and apps:
 
@@ -92,8 +92,9 @@ npm run test:unit
 cd apps/web
 npm run test:unit
 ```
+⚠️ The application is not covered 100% by tests. Only the most important parts are covered using unit tests.
 
-## 🧹 Lint & Format
+## Lint & Format
 
 Lint all workspaces:
 
@@ -129,7 +130,7 @@ book_tracker/
 
 ---
 
-## 🔑 Notes
+## Notes
 
 - Always run migrations before starting the backend.
 - Use `npm run dev` at the root for local development.
