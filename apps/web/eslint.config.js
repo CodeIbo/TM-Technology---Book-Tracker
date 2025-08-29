@@ -1,12 +1,11 @@
 import base from '@packages/eslint-config';
-
-/** @type {import("eslint").Linter.Config} */
+import globals from 'globals';
 
 export default [
-  {
-    files: ['**/*.{ts,tsx}'],
-    // Files to ignore extend doesn't work
-    ignores: ['**/node_modules/**', '**/dist/**', '**/__tests__/**', '**/**.js'],
-  },
+  { ignores: ['**/node_modules/**', '**/dist/**', '**/__tests__/**', '**/*.js'] },
   ...base,
+  {
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    languageOptions: { globals: globals.browser },
+  },
 ];

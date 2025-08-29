@@ -1,6 +1,7 @@
 import { Response } from 'express';
-import { HttpError } from './http-error';
+
 import HttpStatusCodes, { HttpMethod, HttpStatusCodeKey } from '@/types/http-status';
+import { HttpError } from './http-error';
 
 export class ResponseBuilder {
   private statusKey: HttpStatusCodeKey = 'OK';

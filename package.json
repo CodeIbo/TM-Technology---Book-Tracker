@@ -1,6 +1,7 @@
 {
   "name": "book_tracker",
   "version": "1.0.0",
+  "author": "@DawidGucwa",
   "packageManager": "^npm@11.0.0",
   "private": true,
   "workspaces": [
@@ -16,7 +17,6 @@
     "format:check": "turbo run format:check",
     "test:unit": "turbo run test:unit"
   },
-  "author": "@DawidGucwa",
   "type": "commonjs",
   "devDependencies": {
     "prettier": "^3.6.2",

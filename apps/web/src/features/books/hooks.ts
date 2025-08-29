@@ -1,8 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import type { TBookRow } from '@packages/validations';
 import { createBook, fetchBooks, setBookRead } from '@/api/book.service';
 import { useSnackbar } from '@/hooks/useSnackbar';
+import type { TBookRow } from '@packages/validations';
 
 export function useBooks() {
   return useQuery({

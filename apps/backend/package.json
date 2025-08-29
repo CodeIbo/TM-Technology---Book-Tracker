@@ -5,16 +5,14 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "start": "node dist/index.js",
-    "knex-migrate": "npx knex --knexfile src/db/knexconfig.js migrate:latest",
+    "dev:knex-migrate": "npx knex --knexfile src/db/knexconfig.js migrate:latest",
     "test:knex-migrate": "npx knex --knexfile src/db/knexconfig.js migrate:latest --env test",
     "prod:knex-migrate": "npx knex --knexfile dist/db/knexconfig.js migrate:latest --env production",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "format": "prettier --write \"**/*.{ts,js,json}\"",
     "format:check": "prettier --check \"**/*.{ts,js,json}\"",
     "test:unit": "jest __tests__/unit"
   },
-  "author": "@DawidGucwa",
-  "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "@packages/validations": "*",

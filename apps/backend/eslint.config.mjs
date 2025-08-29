@@ -1,10 +1,11 @@
 import base from '@packages/eslint-config';
+import globals from 'globals';
 
-/** @type {import("eslint").Linter.Config} */
 export default [
-  {
-    // Files to ignore overvrites doesn't work
-    ignores: ['**/node_modules/**', '**/dist/**', '**/__tests__/**', '**/**.js'],
-  },
+  { ignores: ['**/node_modules/**', '**/dist/**', '**/__tests__/**', '**/*.js'] },
   ...base,
+  {
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    languageOptions: { globals: globals.node },
+  },
 ];

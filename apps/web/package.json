@@ -13,7 +13,6 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,json,css,html}\"",
     "test:unit": "vitest run"
   },
-  "author": "@DawidGucwa",
   "dependencies": {
     "@packages/validations": "*",
     "@emotion/react": "^11.14.0",

@@ -6,9 +6,14 @@ import reactHooks from "eslint-plugin-react-hooks";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import security from "eslint-plugin-security";
 import prettier from "eslint-plugin-prettier";
+import eslintConfigPrettier from 'eslint-config-prettier';
 import globals from "globals";
 
 export default [
+
+  {
+    ignores: ['**/node_modules/**', '**/dist/**', '**/__tests__/**', '**/*.js'],
+  },
 
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -62,5 +67,5 @@ export default [
     files: ["apps/web/**/*"],
     languageOptions: { globals: globals.browser }
   },
-
+  eslintConfigPrettier
 ];

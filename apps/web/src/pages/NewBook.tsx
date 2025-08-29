@@ -1,9 +1,9 @@
+import { Typography } from '@mui/material';
 import { type TBookCreate } from '@packages/validations';
 import { useState } from 'react';
 
 import { BookForm } from '@/components/forms/BookForm';
 import { useCreateBook } from '@/features/books/hooks';
-import { Typography } from '@mui/material';
 
 export function NewBookPage() {
   const [error, setError] = useState<string | null>(null);

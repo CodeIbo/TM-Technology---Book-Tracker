@@ -1,7 +1,7 @@
 import { Response, Request } from 'express';
 
-import { BooksModel } from './books.model';
 import { ResponseBuilder } from '@/utils/response-builder';
+import { BooksModel } from './books.model';
 
 export const createBook = async (req: Request, res: Response) => {
   const r = new ResponseBuilder(res);

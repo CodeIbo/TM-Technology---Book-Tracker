@@ -1,6 +1,6 @@
 import { Switch, TableCell, TableRow, Tooltip, Typography } from '@mui/material';
-import type { TBookRow } from '@packages/validations';
 import { clip } from '@/features/books/text';
+import type { TBookRow } from '@packages/validations';
 
 export function BookRow({
   book,
