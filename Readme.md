@@ -13,7 +13,11 @@ Make sure you have **Node.js >= 20** and **npm >= 11** installed.
 npm install
 ```
 
-### 2. Database migrations
+### 2. Environment files
+
+Before running the apps, copy .env.example to .env in both apps/web and apps/backend and adjust the values as needed.
+
+### 3. Database migrations
 
 Before running the backend, you must run the proper migrations:
 
@@ -52,6 +56,7 @@ Run the frontend only:
 cd apps/web
 npm run dev
 ```
+⚠️ Note: On the very first run after npm install, you may encounter a compilation error due to the package build queue. If this happens, simply stop the process and run npm run dev again.
 
 ## Build
 
