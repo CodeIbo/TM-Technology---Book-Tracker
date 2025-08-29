@@ -21,5 +21,6 @@
   "include": [
     "src",
     "vite.config.ts",
+    "__tests__"
   ]
 }
