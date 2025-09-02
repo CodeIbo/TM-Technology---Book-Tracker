@@ -1,4 +1,5 @@
 import { CorsOptions } from 'cors';
+import { getEnvMode } from '@/utils/app-state';
 
 const corsOptions: CorsOptions = {
   origin: (origin, callback) => {
@@ -6,9 +7,10 @@ const corsOptions: CorsOptions = {
       .split(',')
       .map((o) => o.trim())
       .filter(Boolean);
-    const isDev = ['development', 'test'].includes(process.env.NODE_ENV as string);
+    const mode = getEnvMode();
+    const isNonProd = mode === 'development' || mode === 'test';
 
-    if (isDev) {
+    if (isNonProd) {
       return callback(null, true);
     }
 

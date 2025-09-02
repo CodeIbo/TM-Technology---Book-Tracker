@@ -15,7 +15,21 @@ npm install
 
 ### 2. Environment files
 
-Before running the apps, copy .env.example to .env in both apps/web and apps/backend and adjust the values as needed.
+Before running the apps, copy .env.example to .env in both `apps/web` and `apps/backend` and adjust the values as needed.
+
+`NODE_ENV` mode default is `development` <br>
+`VITE_API_URL` default is `http://localhost:3000` <br>
+`ALLOWED_ORIGIN` in `development` mode isn't working for better experience
+
+```bash
+cd apps/backend
+cp .example.env .env
+```
+
+```bash
+cd apps/web
+cp .example.env .env
+```
 
 ### 3. Database migrations
 
@@ -56,6 +70,7 @@ Run the frontend only:
 cd apps/web
 npm run dev
 ```
+
 ⚠️ Note: On the very first run after npm install, you may encounter a compilation error due to the package build queue. If this happens, simply stop the process and run npm run dev again.
 
 ## Build
@@ -97,6 +112,7 @@ npm run test:unit
 cd apps/web
 npm run test:unit
 ```
+
 ⚠️ The application is not covered 100% by tests. Only the most important parts are covered using unit tests.
 
 ## Lint & Format

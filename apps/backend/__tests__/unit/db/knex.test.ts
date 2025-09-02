@@ -43,4 +43,21 @@ describe('db/knex', () => {
       connection: { filename: 'test.db' },
     });
   });
+
+  it('falls back to development when NODE_ENV is invalid', async () => {
+    process.env.NODE_ENV = 'invalid';
+    await loadKnexModule();
+    expect(mockKnex).toHaveBeenCalledWith({
+      client: 'sqlite3',
+      connection: { filename: 'dev.db' },
+    });
+  });
+  it('accepts case-insensitive NODE_ENV values', async () => {
+    process.env.NODE_ENV = 'TEST';
+    await loadKnexModule();
+    expect(mockKnex).toHaveBeenCalledWith({
+      client: 'sqlite3',
+      connection: { filename: 'test.db' },
+    });
+  });
 });

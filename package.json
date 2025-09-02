@@ -9,7 +9,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev --parallel",
+    "preDev": "turbo run build --filter=./packages/*",
+    "dev": "npm run preDev && turbo run dev --parallel",
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
